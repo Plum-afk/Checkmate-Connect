@@ -97,7 +97,7 @@ export const ChessBoard: React.FC<ChessBoardProps> = ({ game, boardFen, userColo
   const lastMove = history.length > 0 ? history[history.length - 1] : null;
 
   return (
-    <div className="select-none grid grid-cols-8 border-4 border-slate-700 rounded-lg overflow-hidden shadow-2xl aspect-square w-full max-w-[600px] mx-auto">
+    <div className="select-none grid grid-cols-8 border-4 border-slate-700 rounded-lg overflow-hidden shadow-2xl w-full max-w-[600px] mx-auto bg-slate-800">
       {renderRanks.map((rank) => (
         renderFiles.map((file) => {
           const square = `${file}${rank}` as Square;
@@ -115,7 +115,7 @@ export const ChessBoard: React.FC<ChessBoardProps> = ({ game, boardFen, userColo
           return (
             <div
               key={square}
-              className={`relative flex items-center justify-center w-full h-full cursor-pointer ${bgClass}`}
+              className={`aspect-square relative flex items-center justify-center w-full cursor-pointer ${bgClass}`}
               onClick={() => handleSquareClick(square)}
             >
               {/* Last Move Highlight */}
@@ -140,12 +140,12 @@ export const ChessBoard: React.FC<ChessBoardProps> = ({ game, boardFen, userColo
 
               {/* Rank/File Labels */}
               {file === (userColor === 'w' ? 'a' : 'h') && (
-                <span className={`absolute top-0.5 left-0.5 text-[10px] font-bold ${isDark ? 'text-board-light' : 'text-board-dark'}`}>
+                <span className={`absolute top-0.5 left-0.5 text-[10px] font-bold ${isDark ? 'text-board-light' : 'text-board-dark'} pointer-events-none`}>
                   {rank}
                 </span>
               )}
               {rank === (userColor === 'w' ? '1' : '8') && (
-                <span className={`absolute bottom-0 right-1 text-[10px] font-bold ${isDark ? 'text-board-light' : 'text-board-dark'}`}>
+                <span className={`absolute bottom-0 right-1 text-[10px] font-bold ${isDark ? 'text-board-light' : 'text-board-dark'} pointer-events-none`}>
                   {file}
                 </span>
               )}
