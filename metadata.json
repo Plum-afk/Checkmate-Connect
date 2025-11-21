@@ -1,0 +1,5 @@
+{
+  "name": "Checkmate Connect",
+  "description": "A real-time multiplayer chess platform allowing users to create game sessions and play against friends directly in the browser using peer-to-peer technology.",
+  "requestFramePermissions": []
+}

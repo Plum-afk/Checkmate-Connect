@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkmate Connect</title>
+    <meta name="description" content="Real-time P2P Chess" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              board: {
+                light: '#e2e8f0', // slate-200
+                dark: '#475569',  // slate-600
+                highlight: 'rgba(255, 255, 0, 0.4)',
+                lastMove: 'rgba(100, 200, 255, 0.4)',
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "chess.js": "https://aistudiocdn.com/chess.js@^1.4.0",
+    "peerjs": "https://aistudiocdn.com/peerjs@^1.5.5",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col">
+    <div id="root" class="flex-grow flex flex-col"></div>
+  </body>
+</html>
